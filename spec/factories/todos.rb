@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :todo do
-    title "MyString"
-    status 1
+    title "Check HANAMI web framework."
+    status "todo"
   end
 end
