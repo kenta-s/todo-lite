@@ -4,13 +4,13 @@ RSpec.describe "todos/show", type: :view do
   before(:each) do
     @todo = assign(:todo, Todo.create!(
       :title => "Title",
-      :status => 2
+      :status => "canceled"
     ))
   end
 
   it "renders attributes in <p>" do
     render
     expect(rendered).to match(/Title/)
-    expect(rendered).to match(/2/)
+    expect(rendered).to match(/canceled/)
   end
 end

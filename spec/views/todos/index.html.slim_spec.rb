@@ -5,18 +5,18 @@ RSpec.describe "todos/index", type: :view do
     assign(:todos, [
       Todo.create!(
         :title => "Title",
-        :status => 2
+        :status => "canceled"
       ),
       Todo.create!(
         :title => "Title",
-        :status => 2
+        :status => "canceled"
       )
     ])
   end
 
   it "renders a list of todos" do
     render
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
-    assert_select "tr>td", :text => 2.to_s, :count => 2
+    assert_select "tr>td", :text => "Title", :count => 2
+    assert_select "tr>td", :text => "canceled", :count => 2
   end
 end
